@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router();
 
 const itemControllers = require("./controllers/itemControllers");
+const VideoController = require("./controllers/VideoController");
 
+router.get("/videos", VideoController.listVideos);
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
 router.put("/items/:id", itemControllers.edit);
